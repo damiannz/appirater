@@ -155,7 +155,7 @@ static BOOL _alwaysUseMainBundle = NO;
     SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
     SCNetworkReachabilityFlags flags;
 	
-    BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
+    BOOL didRetrieveFlags = (BOOL)SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
     CFRelease(defaultRouteReachability);
 	
     if (!didRetrieveFlags)
